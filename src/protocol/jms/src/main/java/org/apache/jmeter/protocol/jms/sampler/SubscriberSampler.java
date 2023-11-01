@@ -290,7 +290,7 @@ public class SubscriberSampler extends BaseJMSSampler implements Interruptible, 
                     }
                 } else if (msg instanceof BytesMessage){
                     BytesMessage bytesMessage = (BytesMessage) msg;
-                    buffer.append(bytesMessage.getBodyLength() + " bytes received in BytesMessage");
+                    buffer.append(bytesMessage.readUTF());
                 } else if (msg instanceof MapMessage){
                     MapMessage mapm = (MapMessage) msg;
                     @SuppressWarnings("unchecked") // MapNames are Strings
